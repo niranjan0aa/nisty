@@ -1,0 +1,1132 @@
+/*================================================
+    TABLE OF CONTENTS
+==================================================
+    1.  Global & Root Styles
+    2.  Preloader Styles
+    3.  Mouse Cursor Styles
+    4.  Header Styles
+    5.  Hero Section
+    6.  Keyframe Animations
+    7.  Responsive Design
+    8.  About Us Section
+    9.  Services Section
+    10. Vehicle Models Section
+    11. News Section
+    12. Locations Section (NEW)
+    13. Contact Section (NEW)
+    14. Footer Section (NEW)
+================================================*/
+
+/* 1. Global & Root Styles
+------------------------------------------------*/
+:root {
+  --primary-color: #2563eb;
+  --primary-hover-color: #1d4ed8;
+  --secondary-color: #ff5f00;
+  --text-light: #ffffff;
+  --text-dark: #1a2b48;
+  --text-muted: #5e6d77;
+  --bg-light: #f9f9f9;
+  --border-color: #e0e0e0;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --font-family: 'Poppins', sans-serif; /* Example font */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #fff;
+  color: var(--text-dark);
+}
+
+.nisty-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+
+/* 2. Preloader Styles
+------------------------------------------------*/
+.nisty-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #002742;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nisty-car {
+  transform-origin: center center;
+  animation: nisty-car-bounce 0.5s infinite alternate;
+}
+.nisty-car__body {
+  animation: nisty-car-move 2s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.nisty-car__wheel {
+  animation: nisty-car-move 2s infinite cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+.nisty-car__wheel--left {
+  transform-origin: center center;
+  animation: nisty-wheel-spin 1s infinite linear;
+}
+.nisty-car__wheel--right {
+  transform-origin: center center;
+  animation: nisty-wheel-spin 1s infinite linear;
+}
+.nisty-car__line {
+  opacity: 0;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  animation: nisty-line-move 2s infinite ease;
+}
+
+/* 3. Mouse Cursor Styles
+------------------------------------------------*/
+.nisty-mouse-cursor {
+  position: fixed;
+  z-index: 9990;
+  pointer-events: none;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.1s ease;
+}
+.nisty-cursor-outer {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--primary-color);
+}
+.nisty-cursor-inner {
+  width: 8px;
+  height: 8px;
+  background-color: var(--primary-color);
+}
+
+/* 4. Header Styles
+------------------------------------------------*/
+.nisty-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+.nisty-main-top-bar {
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  font-size: 14px;
+  padding: 8px 0;
+}
+.nisty-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nisty-help-number {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.nisty-help-number h6 {
+  margin: 0;
+  font-weight: 400;
+}
+.nisty-help-number a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s;
+}
+.nisty-help-number a:hover {
+  opacity: 0.8;
+}
+
+/* Navigation Bar */
+.nisty-header-nav-bar {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid #eee;
+}
+.nisty-header.nisty-sticky { /* Class added by JS on scroll */
+    position: fixed;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    animation: nisty-slide-down 0.5s ease-out;
+}
+.nisty-bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.nisty-logo img {
+  max-height: 45px;
+}
+.nisty-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 35px;
+}
+.nisty-nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+.nisty-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
+}
+.nisty-nav a:hover, .nisty-nav li.active a {
+  color: var(--primary-color);
+}
+.nisty-nav a:hover::after, .nisty-nav li.active a::after {
+  width: 100%;
+}
+
+
+/* 5. Hero Section
+------------------------------------------------*/
+.nisty-hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: var(--text-light);
+}
+
+/* Video Background */
+.nisty-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.nisty-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.nisty-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.2) 100%);
+}
+.nisty-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 -20px;
+}
+.nisty-col-lg-5, .nisty-col-lg-7 {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.nisty-col-lg-5 { flex: 0 0 41.66%; max-width: 41.66%; }
+.nisty-col-lg-7 { flex: 0 0 58.33%; max-width: 58.33%; }
+.nisty-hero-text {
+  animation: nisty-fade-in 1s ease-out;
+}
+.nisty-hero-title {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+.nisty-hero-subtitle {
+  font-size: 18px;
+  font-weight: 400;
+  max-width: 450px;
+  line-height: 1.6;
+  opacity: 0.9;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* Form Styles */
+/* Service Form */
+.nisty-service-form {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 25px;
+  box-shadow: var(--shadow);
+  color: var(--text-dark);
+  animation: nisty-fade-in-up 1s ease-out 0.2s;
+  animation-fill-mode: both;
+}
+.nisty-form-header { margin-bottom: 20px; text-align: center; }
+.nisty-form-title {
+  font-family: var(--font-family-heading);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+.nisty-input-group { position: relative; margin-bottom: 12px; }
+.nisty-form-input, .nisty-form-textarea, .nisty-form-select {
+  width: 100%;
+  height: 48px;
+  padding: 0 15px 0 40px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 15px;
+  font-family: var(--font-family-base);
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+.nisty-form-input:focus, .nisty-form-textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(12, 74, 110, 0.15);
+  background-color: #fff;
+  outline: none;
+}
+.nisty-icon {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 16px;
+  pointer-events: none;
+}
+.nisty-form-row { display: flex; flex-wrap: wrap; margin: 0 -6px; }
+.nisty-form-col { flex: 1; padding: 0 6px; min-width: calc(50% - 12px); }
+.nisty-form-textarea {
+  min-height: 80px;
+  padding: 12px 15px;
+  resize: vertical;
+}
+.nisty-form-footer { margin-top: 15px; }
+.nisty-btn.nisty-primary-btn {
+  width: 100%;
+  padding: 14px 24px;
+  background-color: var(--secondary-color);
+  color: var(--text-light);
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+}
+.nisty-btn.nisty-primary-btn:hover {
+  background-color: #c5400d;
+  box-shadow: 0 4px 12px rgba(217, 72, 15, 0.3);
+}
+
+/* 6. Keyframe Animations
+------------------------------------------------*/
+@keyframes nisty-car-bounce {
+  0% { transform: translateY(1px); }
+  100% { transform: translateY(-1px); }
+}
+@keyframes nisty-car-move {
+  0% { transform: translateX(-100px); }
+  100% { transform: translateX(100px); }
+}
+@keyframes nisty-wheel-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes nisty-line-move {
+  0% { transform: translateX(0); opacity: 1; stroke-dashoffset: 40; }
+  50% { opacity: 1; stroke-dashoffset: 0; }
+  100% { transform: translateX(50px); opacity: 0; }
+}
+@keyframes nisty-fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes nisty-slide-in-up {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes nisty-slide-down {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* 7. Responsive Design
+------------------------------------------------*/
+@media (max-width: 992px) {
+  .nisty-hero-section {
+    height: auto;
+    padding: 180px 0 80px 0;
+    text-align: center;
+  }
+  .nisty-video-overlay {
+    background: rgba(0, 0, 0, 0.6);
+  }
+  .nisty-row {
+    flex-direction: column;
+  }
+  .nisty-col-lg-5, .nisty-col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  .nisty-hero-text {
+    margin-bottom: 40px;
+  }
+  .nisty-hero-subtitle {
+    margin: 0 auto;
+    max-width: 500px;
+  }
+  .nisty-nav {
+      display: none; /* Add mobile menu toggle logic */
+  }
+  .nisty-top-bar {
+      flex-direction: column;
+      gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nisty-hero-title {
+    font-size: 36px;
+  }
+  .nisty-hero-subtitle {
+    font-size: 16px;
+  }
+  .nisty-service-form {
+    padding: 20px;
+  }
+  .nisty-form-title {
+    font-size: 24px;
+  }
+  .nisty-form-row {
+    flex-direction: column;
+  }
+  .nisty-form-col {
+    padding: 0;
+  }
+  .nisty-service-options {
+     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .nisty-help-number h6, .nisty-help-number a {
+      font-size: 12px;
+  }
+}
+/*================================================
+    8. About Us Section Styles
+================================================*/
+.nisty-about-section {
+  padding: 80px 0;
+  background-color: #ffffff;
+}
+
+.nisty-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.nisty-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.nisty-section-subtitle {
+  font-size: 18px;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.nisty-row.nisty-align-center {
+  align-items: center;
+}
+
+.nisty-col-md-6 {
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.nisty-about-image {
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.nisty-about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.nisty-about-image:hover img {
+  transform: scale(1.05);
+}
+
+.nisty-about-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 15px;
+}
+
+.nisty-about-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.nisty-mission-vision {
+  margin-top: 30px;
+  display: flex;
+  gap: 25px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 25px;
+}
+
+.nisty-mv-item h4 {
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+/* Core Values Styling */
+.nisty-values-section {
+    margin-top: 70px;
+    text-align: center;
+}
+
+.nisty-values-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 40px;
+}
+
+.nisty-values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.nisty-value-card {
+  background-color: var(--bg-light);
+  padding: 30px 20px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.nisty-value-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow);
+  border-color: var(--primary-color);
+}
+
+.nisty-value-icon {
+  font-size: 32px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.nisty-value-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.nisty-value-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/*================================================
+    9. Services Section Styles
+================================================*/
+.nisty-services-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.nisty-service-category {
+    margin-top: 50px;
+}
+
+.nisty-category-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nisty-category-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+}
+
+.nisty-services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+.nisty-service-card {
+    background-color: #ffffff;
+    border-radius: var(--border-radius);
+    padding: 35px 30px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease-in-out;
+}
+
+.nisty-service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+    border-color: transparent;
+}
+
+.nisty-service-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background-color: rgba(37, 99, 235, 0.1);
+    transition: all 0.3s ease;
+}
+
+.nisty-service-card:hover .nisty-service-icon {
+    transform: rotateY(180deg);
+}
+
+.nisty-service-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+}
+
+.nisty-service-desc {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.nisty-highlight-card {
+    background-color: var(--text-dark);
+    border-color: var(--text-dark);
+}
+
+.nisty-highlight-card .nisty-service-icon {
+    color: var(--text-light);
+    background-color: var(--primary-color);
+}
+
+.nisty-highlight-card .nisty-service-name {
+    color: var(--text-light);
+}
+
+.nisty-highlight-card .nisty-service-desc {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*================================================
+    10. Vehicle Models Section Styles
+================================================*/
+.nisty-vehicle-models-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+
+.nisty-vehicle-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nisty-tab-link {
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background-color: transparent;
+    border: none;
+    border-bottom: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nisty-tab-link:hover {
+    color: var(--primary-color);
+}
+
+.nisty-tab-link.nisty-active {
+    color: var(--primary-color);
+    border-bottom-color: var(--primary-color);
+}
+
+.nisty-tab-content {
+    display: none;
+    animation: nisty-fade-in 0.5s;
+}
+
+.nisty-tab-content.nisty-active {
+    display: block;
+}
+
+.nisty-vehicle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.nisty-vehicle-card {
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    text-decoration: none;
+    display: block;
+}
+
+.nisty-vehicle-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow);
+}
+
+.nisty-vehicle-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    background-color: var(--bg-light);
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.nisty-vehicle-card:hover img {
+    transform: scale(1.05);
+}
+
+.nisty-vehicle-card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    padding: 40px 20px 20px;
+    transition: all 0.3s ease;
+}
+
+.nisty-vehicle-card h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-align: center;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.nisty-vehicle-card:hover h4 {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/*================================================
+    11. News Section Styles
+================================================*/
+.nisty-news-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+
+.nisty-news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.nisty-news-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.nisty-news-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow);
+}
+
+.nisty-news-image {
+    position: relative;
+    height: 220px;
+}
+
+.nisty-news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.nisty-news-date {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 8px 12px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.nisty-news-date span {
+    display: block;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.nisty-news-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.nisty-news-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+}
+
+.nisty-news-desc {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.nisty-read-more {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.nisty-read-more i {
+    margin-left: 5px;
+    transition: transform 0.3s ease;
+}
+
+.nisty-read-more:hover {
+    color: var(--primary-hover-color);
+}
+
+.nisty-read-more:hover i {
+    transform: translateX(5px);
+}
+
+/*================================================
+    12. Locations Section Styles (NEW)
+================================================*/
+.nisty-locations-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+}
+.nisty-locations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+.nisty-location-card {
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    transition: all 0.3s ease;
+}
+.nisty-location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+.nisty-location-map iframe {
+    display: block;
+    border: none;
+    width: 100%;
+    height: 250px;
+}
+.nisty-location-details {
+    padding: 25px;
+}
+.nisty-location-title {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+    color: var(--text-dark);
+}
+.nisty-location-address,
+.nisty-location-contact {
+    font-size: 15px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nisty-location-contact a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+.nisty-location-contact a:hover {
+    text-decoration: underline;
+}
+.nisty-location-details .nisty-btn {
+    margin-top: 15px;
+}
+
+/*================================================
+    13. Contact Section Styles (NEW)
+================================================*/
+.nisty-contact-section {
+    padding: 80px 0;
+    background-color: var(--bg-light);
+}
+.nisty-contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: flex-start;
+    background: #fff;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+.nisty-contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+.nisty-contact-info p {
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+.nisty-contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nisty-contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+    color: var(--text-muted);
+}
+.nisty-contact-info li i {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: 5px;
+}
+.nisty-contact-info li span {
+    flex: 1;
+}
+.nisty-contact-info li a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+.nisty-contact-info li a:hover {
+    text-decoration: underline;
+}
+.nisty-contact-form .nisty-form-input {
+    padding-left: 20px; /* No icon */
+}
+
+/*================================================
+    14. Footer Section Styles (NEW)
+================================================*/
+.nisty-footer {
+    background-color: var(--text-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 60px 0 0;
+}
+.nisty-footer-widgets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.nisty-footer-widget .nisty-logo {
+    margin-bottom: 20px;
+}
+.nisty-footer-widget p {
+    line-height: 1.8;
+    margin: 0;
+}
+.nisty-widget-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-light);
+    margin: 0 0 20px 0;
+}
+.nisty-footer-widget ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.nisty-footer-widget ul li {
+    margin-bottom: 12px;
+}
+.nisty-footer-widget ul a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.nisty-footer-widget ul a:hover {
+    color: var(--text-light);
+    padding-left: 5px;
+}
+.nisty-footer-widget a {
+    color: var(--secondary-color);
+}
+.nisty-footer-bottom {
+    padding: 25px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nisty-copyright {
+    margin: 0;
+    font-size: 14px;
+}
+.nisty-social-links a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    margin-left: 15px;
+    transition: all 0.3s ease;
+}
+.nisty-social-links a:hover {
+    color: var(--text-light);
+    transform: translateY(-3px);
+}
+
+/* Responsive adjustments
+------------------------------------------------*/
+@media (max-width: 992px) {
+    .nisty-col-md-6 {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+    .nisty-about-image {
+      margin-bottom: 40px;
+    }
+    .nisty-services-grid,
+    .nisty-vehicle-grid,
+    .nisty-news-grid,
+    .nisty-locations-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+    .nisty-contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .nisty-mission-vision,
+    .nisty-footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    .nisty-values-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    .nisty-services-section,
+    .nisty-vehicle-models-section,
+    .nisty-news-section,
+    .nisty-locations-section,
+    .nisty-contact-section {
+        padding: 60px 0;
+    }
+    .nisty-services-grid,
+    .nisty-vehicle-grid,
+    .nisty-news-grid,
+    .nisty-locations-grid {
+        grid-template-columns: 1fr;
+    }
+    .nisty-vehicle-tabs {
+        gap: 5px;
+    }
+    .nisty-tab-link {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+    .nisty-contact-wrapper {
+        padding: 25px;
+    }
+}

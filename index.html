@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eicher Vehicle Services</title>
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Preloader -->
+    <div class="nisty-preloader">
+      <svg
+        class="nisty-car"
+        width="102"
+        height="40"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g
+          transform="translate(2 1)"
+          stroke="#FFFFFF"
+          fill="none"
+          fill-rule="evenodd"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            class="nisty-car__body"
+            d="M47.293 2.375C52.927.792 54.017.805 54.017.805c2.613-.445 6.838-.337 9.42.237l8.381 1.863c2.59.576 6.164 2.606 7.98 4.531l6.348 6.732 6.245 1.877c3.098.508 5.609 3.431 5.609 6.507v4.206c0 .29-2.536 4.189-5.687 4.189H36.808c-2.655 0-4.34-2.1-3.688-4.67 0 0 3.71-19.944 14.173-23.902zM36.5 15.5h54.01"
+            stroke-width="3"
+          />
+          <ellipse
+            class="nisty-car__wheel nisty-car__wheel--left"
+            stroke-width="3.2"
+            fill="#FFF"
+            cx="83.493"
+            cy="30.25"
+            rx="6.922"
+            ry="6.808"
+          />
+          <ellipse
+            class="nisty-car__wheel nisty-car__wheel--right"
+            stroke-width="3.2"
+            fill="#FFF"
+            cx="46.511"
+            cy="30.25"
+            rx="6.922"
+            ry="6.808"
+          />
+          <path
+            class="nisty-car__line nisty-car__line--top"
+            d="M22.5 16.5H2.475"
+            stroke-width="3"
+          />
+          <path
+            class="nisty-car__line nisty-car__line--middle"
+            d="M20.5 23.5H.4755"
+            stroke-width="3"
+          />
+          <path
+            class="nisty-car__line nisty-car__line--bottom"
+            d="M25.5 9.5h-19"
+            stroke-width="3"
+          />
+        </g>
+      </svg>
+    </div>
+    <div class="nisty-mouse-cursor nisty-cursor-outer"></div>
+    <div class="nisty-mouse-cursor nisty-cursor-inner"></div>
+
+    <!-- Header -->
+    <header id="nisty-sticky-header" class="nisty-header">
+      <div class="nisty-main-top-bar">
+        <div class="nisty-container">
+          <div class="nisty-top-bar">
+            <p>Sri Nisty Automobiles</p>
+            <div class="nisty-help-number">
+              <h6>
+                <i class="fas fa-phone"></i> Phone:
+                <a href="tel:+918012345678">+91 80123 45678</a>
+              </h6>
+              <a href="#"><i class="fas fa-info-circle"></i> Help</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nisty-header-nav-bar">
+        <div class="nisty-container">
+          <div class="nisty-bottom-bar">
+            <div class="nisty-logo">
+              <a href="#home">
+                <img
+                  alt="logo"
+                  src="https://placehold.co/150x45/ffffff/000000?text=NISTY+AUTO"
+                />
+              </a>
+            </div>
+            <nav class="nisty-nav">
+              <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#vehiclemodels">Vehicle Models</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#locations">Locations</a></li>
+                <li><a href="#book">Contact Us</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="nisty-hero-section">
+      <div class="nisty-video-background">
+        <video
+          class="nisty-hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="https://placehold.co/1920x1080/000000/FFFFFF?text=Loading..."
+        >
+          <source
+            src="https://cms.eichertrucksandbuses.com/uploads/banner/video_link/523f66e70890b783cacb79661261a7622.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+        <div class="nisty-video-overlay"></div>
+      </div>
+      <div class="nisty-container">
+        <div class="nisty-hero-content">
+          <div class="nisty-row nisty-align-center">
+            <div class="nisty-col-lg-5">
+              <div class="nisty-hero-text">
+                <h1 class="nisty-hero-title">
+                  Premier Service for Your Eicher Vehicle
+                </h1>
+                <p class="nisty-hero-subtitle">
+                  Experience unparalleled service and reliability. Book your
+                  maintenance or repair appointment with our expert technicians
+                  today.
+                </p>
+              </div>
+            </div>
+           <div class="nisty-col-lg-6">
+              <div id="nisty-service-tabs">
+                <div class="nisty-tab-pane nisty-active">
+                  <form id="nisty-service-form" class="nisty-service-form" method="post">
+                    <div class="nisty-form-header">
+                      <h3 class="nisty-form-title">Book a Service</h3>
+                    </div>
+                    
+                    <div class="nisty-form-row">
+                        <div class="nisty-form-col">
+                            <div class="nisty-input-group">
+                                <i class="fas fa-user nisty-icon"></i>
+                                <input type="text" class="nisty-form-input" name="full_name" placeholder="Full Name*" required>
+                            </div>
+                        </div>
+                        <div class="nisty-form-col">
+                            <div class="nisty-input-group">
+                                <i class="fas fa-phone nisty-icon"></i>
+                                <input type="tel" class="nisty-form-input" name="phone_number" placeholder="Phone Number*" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nisty-form-row">
+                        <div class="nisty-form-col">
+                            <div class="nisty-input-group">
+                                <i class="fas fa-truck nisty-icon"></i>
+                                <input type="text" class="nisty-form-input" name="vehicle_number" placeholder="Vehicle Reg. Number*" required>
+                            </div>
+                        </div>
+                        <div class="nisty-form-col">
+                            <div class="nisty-input-group">
+                                <i class="fas fa-car nisty-icon"></i>
+                                <input type="text" class="nisty-form-input" name="vehicle_model" placeholder="Vehicle Model*" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nisty-input-group">
+                      <i class="fas fa-map-marker-alt nisty-icon"></i>
+                      <select class="nisty-form-input" name="service_center" required>
+                          <option value="" disabled selected>Preferred Service Center*</option>
+                          <option value="Peenya">Peenya Industrial Hub</option>
+                          <option value="Koramangala">Koramangala Service Center</option>
+                          <option value="Hosur Road">Hosur Road Workshop</option>
+                      </select>
+                    </div>
+
+                    <div class="nisty-form-row">
+                      <div class="nisty-form-col">
+                        <div class="nisty-input-group">
+                          <i class="fas fa-calendar-alt nisty-icon"></i>
+                          <input type="date" class="nisty-form-input" name="service_date" required>
+                        </div>
+                      </div>
+                      <div class="nisty-form-col">
+                        <div class="nisty-input-group">
+                          <i class="fas fa-clock nisty-icon"></i>
+                          <select class="nisty-form-input" name="service_time" required>
+                            <option value="" disabled selected>Preferred Time*</option>
+                            <option value="09:00-11:00">Morning (9AM-11AM)</option>
+                            <option value="11:00-13:00">Late Morning (11AM-1PM)</option>
+                            <option value="14:00-16:00">Afternoon (2PM-4PM)</option>
+                            <option value="16:00-18:00">Evening (4PM-6PM)</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="nisty-input-group">
+                        <textarea class="nisty-form-textarea" name="service_notes" placeholder="Describe the issue or service required..."></textarea>
+                    </div>
+
+                    <div class="nisty-form-footer">
+                      <button type="submit" class="nisty-btn nisty-primary-btn">
+                        <span>Confirm Booking</span>
+                        <i class="fas fa-arrow-right"></i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="nisty-about-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">About Sri Nisty Automotives</h2>
+          <p class="nisty-section-subtitle">
+            Your Trusted Partner in Eicher Vehicle Care Since 2009
+          </p>
+        </div>
+        <div class="nisty-row nisty-align-center">
+          <div class="nisty-col-md-6">
+            <div class="nisty-about-image">
+              <img
+                src="https://placehold.co/600x550/e0e0e0/333?text=Our+Workshop"
+                alt="Sri Nisty Automotives Workshop"
+              />
+            </div>
+          </div>
+          <div class="nisty-col-md-6">
+            <div class="nisty-about-content">
+              <h3>A Decade of Excellence in Automotive Service</h3>
+              <p>
+                Established in 2009, <strong>Sri Nisty Automotives</strong> is a
+                leading authorized service center for Eicher commercial
+                vehicles. We are committed to providing top-notch after-sales
+                support, combining our vast experience with a passion for
+                excellence.
+              </p>
+              <p>
+                Our state-of-the-art facility is equipped with the latest
+                diagnostic tools and our highly skilled, factory-trained
+                technicians ensure your vehicle receives the best care possible.
+                We use only genuine Eicher spare parts to guarantee performance
+                and reliability, minimizing downtime and keeping your business
+                moving forward.
+              </p>
+              <div class="nisty-mission-vision">
+                <div class="nisty-mv-item">
+                  <h4>Our Vision</h4>
+                  <p>
+                    To be the most trusted and preferred Eicher service partner
+                    in the region, renowned for quality and customer
+                    satisfaction.
+                  </p>
+                </div>
+                <div class="nisty-mv-item">
+                  <h4>Our Mission</h4>
+                  <p>
+                    To exceed customer expectations by providing reliable,
+                    efficient, and transparent services that build lasting
+                    relationships.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nisty-values-section">
+          <h3 class="nisty-values-title">Our Core Values</h3>
+          <div class="nisty-values-grid">
+            <div class="nisty-value-card">
+              <div class="nisty-value-icon"><i class="fas fa-users"></i></div>
+              <h5 class="nisty-value-name">Customer Centricity</h5>
+              <p class="nisty-value-desc">
+                Placing your needs and satisfaction at the absolute core of our
+                operations.
+              </p>
+            </div>
+            <div class="nisty-value-card">
+              <div class="nisty-value-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h5 class="nisty-value-name">Integrity</h5>
+              <p class="nisty-value-desc">
+                Upholding transparency, honesty, and ethical standards in every
+                service we provide.
+              </p>
+            </div>
+            <div class="nisty-value-card">
+              <div class="nisty-value-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <h5 class="nisty-value-name">Quality</h5>
+              <p class="nisty-value-desc">
+                Committing to the highest standards of service and workmanship
+                with genuine parts.
+              </p>
+            </div>
+            <div class="nisty-value-card">
+              <div class="nisty-value-icon">
+                <i class="fas fa-handshake"></i>
+              </div>
+              <h5 class="nisty-value-name">Teamwork</h5>
+              <p class="nisty-value-desc">
+                Leveraging our collective expertise and collaborative spirit to
+                solve any challenge.
+              </p>
+            </div>
+            <div class="nisty-value-card">
+              <div class="nisty-value-icon">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h5 class="nisty-value-name">Innovation</h5>
+              <p class="nisty-value-desc">
+                Constantly adopting the latest technology to deliver more
+                efficient and effective service.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="nisty-services-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">Our Comprehensive Services</h2>
+          <p class="nisty-section-subtitle">
+            Delivering reliable and efficient solutions to keep your Eicher
+            vehicle in peak condition, whether in our workshop or on the road.
+          </p>
+        </div>
+        <div class="nisty-service-category">
+          <h3 class="nisty-category-title">In-Workshop Services</h3>
+          <div class="nisty-services-grid">
+            <div class="nisty-service-card">
+              <div class="nisty-service-icon"><i class="fas fa-tools"></i></div>
+              <h4 class="nisty-service-name">General Repairs & Maintenance</h4>
+              <p class="nisty-service-desc">
+                Complete vehicle diagnostics and repairs for all Eicher models,
+                including engine, transmission, and electrical systems,
+                performed by factory-trained experts.
+              </p>
+            </div>
+            <div class="nisty-service-card">
+              <div class="nisty-service-icon">
+                <i class="fas fa-calendar-alt"></i>
+              </div>
+              <h4 class="nisty-service-name">Periodic & Preventive Service</h4>
+              <p class="nisty-service-desc">
+                Scheduled maintenance plans to ensure longevity and optimal
+                performance, helping prevent unexpected breakdowns and costly
+                repairs.
+              </p>
+            </div>
+            <div class="nisty-service-card">
+              <div class="nisty-service-icon">
+                <i class="fas fa-car-crash"></i>
+              </div>
+              <h4 class="nisty-service-name">Accident & Body Repair</h4>
+              <p class="nisty-service-desc">
+                State-of-the-art body shop for major and minor collision
+                repairs, restoring your vehicle to its original condition with
+                genuine Eicher parts.
+              </p>
+            </div>
+            <div class="nisty-service-card">
+              <div class="nisty-service-icon"><i class="fas fa-cogs"></i></div>
+              <h4 class="nisty-service-name">Genuine Eicher Spares</h4>
+              <p class="nisty-service-desc">
+                Exclusive use of authentic Eicher spare parts to guarantee
+                perfect fit, maximum durability, and uncompromised vehicle
+                performance.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="nisty-service-category">
+          <h3 class="nisty-category-title">Eicher On-Site Support</h3>
+          <div class="nisty-services-grid">
+            <div class="nisty-service-card nisty-highlight-card">
+              <div class="nisty-service-icon">
+                <i class="fas fa-truck-moving"></i>
+              </div>
+              <h4 class="nisty-service-name">24x7 Breakdown Assistance</h4>
+              <p class="nisty-service-desc">
+                Round-the-clock emergency support for breakdowns. Our mobile
+                service vans are equipped to get you back on the road anytime,
+                anywhere.
+              </p>
+            </div>
+            <div class="nisty-service-card nisty-highlight-card">
+              <div class="nisty-service-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <h4 class="nisty-service-name">On-Site Repairs & Service</h4>
+              <p class="nisty-service-desc">
+                We bring our workshop to your location. Our experts can perform
+                scheduled services and minor repairs right at your premises,
+                saving you valuable time.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vehicle Models Section -->
+    <section id="vehiclemodels" class="nisty-vehicle-models-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">Explore Our Vehicle Range</h2>
+          <p class="nisty-section-subtitle">
+            Engineered for reliability and performance, our vehicles are built
+            to meet diverse business needs.
+          </p>
+        </div>
+        <div class="nisty-vehicle-tabs">
+          <button class="nisty-tab-link nisty-active" data-tab="trucks">
+            <i class="fas fa-truck"></i> Trucks
+          </button>
+          <button class="nisty-tab-link" data-tab="buses">
+            <i class="fas fa-bus"></i> Buses
+          </button>
+          <button class="nisty-tab-link" data-tab="special">
+            <i class="fas fa-cog"></i> Special Applications
+          </button>
+        </div>
+        <div id="trucks" class="nisty-tab-content nisty-active">
+          <div class="nisty-vehicle-grid">
+            <a
+              href="https://www.eichertrucksandbuses.com/heavy-duty-trucks"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/truck/non-polar/non-polar-pro-6048.png"
+                alt="Heavy Duty Truck"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>Heavy Duty Trucks</h4>
+              </div>
+            </a>
+            <a
+              href="https://www.eichertrucksandbuses.com/light-medium-duty-trucks"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/truck/non-polar/non-polar-pro-2095xp.png"
+                alt="Light & Medium Duty Truck"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>Light & Medium Duty</h4>
+              </div>
+            </a>
+            <a
+              href="https://smalltrucks.eichertrucksandbuses.com/"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://smalltrucks.eichertrucksandbuses.com/images/eicher-pro-2049.png"
+                alt="Small Truck"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>Small Trucks</h4>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div id="buses" class="nisty-tab-content">
+          <div class="nisty-vehicle-grid">
+            <a
+              href="https://www.eichertrucksandbuses.com/buses/school-buses"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/buses/non-polar/non-polar-skyline-pro-3009h.png"
+                alt="School Bus"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>School Buses</h4>
+              </div>
+            </a>
+            <a
+              href="https://www.eichertrucksandbuses.com/buses/staff-buses"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/buses/non-polar/non-polar-starline-2070e.png"
+                alt="Staff Bus"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay"><h4>Staff Buses</h4></div>
+            </a>
+            <a
+              href="https://www.eichertrucksandbuses.com/buses/chassis"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/buses/non-polar/non-polar-3009l-chassis.png"
+                alt="Bus Chassis"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay"><h4>Bus Chassis</h4></div>
+            </a>
+          </div>
+        </div>
+        <div id="special" class="nisty-tab-content">
+          <div class="nisty-vehicle-grid">
+            <a
+              href="https://www.eichertrucksandbuses.com/special-applications/construction"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/application/construction.png"
+                alt="Construction Vehicle"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>Construction</h4>
+              </div>
+            </a>
+            <a
+              href="https://www.eichertrucksandbuses.com/special-applications/distribution"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/application/e-commerce.png"
+                alt="Distribution Vehicle"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay">
+                <h4>Distribution</h4>
+              </div>
+            </a>
+            <a
+              href="https://www.eichertrucksandbuses.com/special-applications/mining"
+              class="nisty-vehicle-card"
+              target="_blank"
+            >
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/application/mining.png"
+                alt="Mining Vehicle"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-vehicle-card-overlay"><h4>Mining</h4></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="news" class="nisty-news-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">Latest News & Updates</h2>
+          <p class="nisty-section-subtitle">
+            Stay informed with the latest happenings and announcements from the
+            world of Eicher.
+          </p>
+        </div>
+        <div class="nisty-news-grid">
+          <div class="nisty-news-card">
+            <div class="nisty-news-image">
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/press_release/eicher-non-mining-deep-mining-tippers.jpg"
+                alt="News Image 1"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-news-date"><span>25</span>Apr 2024</div>
+            </div>
+            <div class="nisty-news-content">
+              <h3 class="nisty-news-title">
+                Eicher launches a Connected-Vehicle-First range of new-age deep
+                mining tippers
+              </h3>
+              <p class="nisty-news-desc">
+                This new range of heavy-duty tippers is designed to deliver
+                unmatched performance and productivity in the toughest mining
+                conditions.
+              </p>
+              <a
+                href="https://www.eichertrucksandbuses.com/news-room/press-release/eicher-launches-a-connected-vehicle-first-range-of-new-age-deep-mining-tippers"
+                class="nisty-read-more"
+                target="_blank"
+                >Read More <i class="fas fa-long-arrow-alt-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="nisty-news-card">
+            <div class="nisty-news-image">
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/press_release/eicher-puducherry.jpg"
+                alt="News Image 2"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-news-date"><span>19</span>Apr 2024</div>
+            </div>
+            <div class="nisty-news-content">
+              <h3 class="nisty-news-title">
+                VECV sets up new dealership in Puducherry to enhance customer
+                support in South India
+              </h3>
+              <p class="nisty-news-desc">
+                The new 3S facility will provide customers with sales, service,
+                and spare parts support, strengthening Eicher's network in the
+                region.
+              </p>
+              <a
+                href="https://www.eichertrucksandbuses.com/news-room/press-release/vecv-sets-up-new-dealership-in-puducherry-to-enhance-customer-support-in-south-india"
+                class="nisty-read-more"
+                target="_blank"
+                >Read More <i class="fas fa-long-arrow-alt-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="nisty-news-card">
+            <div class="nisty-news-image">
+              <img
+                src="https://www.eichertrucksandbuses.com/front/images/press_release/eicher-trucks-and-buses-delivers-the-first-lng-bus-in-india.jpg"
+                alt="News Image 3"
+                onerror="this.onerror=null;this.src='https://placehold.co/400x250/e0e0e0/333?text=Image+Not+Found';"
+              />
+              <div class="nisty-news-date"><span>19</span>Mar 2024</div>
+            </div>
+            <div class="nisty-news-content">
+              <h3 class="nisty-news-title">
+                Eicher Trucks and Buses delivers the first LNG bus in India
+              </h3>
+              <p class="nisty-news-desc">
+                Marking a significant step towards cleaner public transport,
+                this LNG bus offers a lower carbon footprint and reduced
+                operating costs.
+              </p>
+              <a
+                href="https://www.eichertrucksandbuses.com/news-room/press-release/eicher-trucks-and-buses-delivers-the-first-lng-bus-in-india"
+                class="nisty-read-more"
+                target="_blank"
+                >Read More <i class="fas fa-long-arrow-alt-right"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Locations Section -->
+    <section id="locations" class="nisty-locations-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">Our Service Locations</h2>
+          <p class="nisty-section-subtitle">
+            Find our state-of-the-art service centers conveniently located
+            across Bengaluru.
+          </p>
+        </div>
+        <div class="nisty-locations-grid">
+          <!-- Location Card 1 -->
+          <div class="nisty-location-card">
+            <div class="nisty-location-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.187395088924!2d77.5148!3d13.0236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae3d1b718e27e9%3A0x2f343513375f4271!2sPeenya%20Industrial%20Area%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678886026145!5m2!1sen!2sin"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="nisty-location-details">
+              <h3 class="nisty-location-title">Peenya Industrial Hub</h3>
+              <p class="nisty-location-address">
+                <i class="fas fa-map-marker-alt"></i> Plot No. 45, 4th Phase,
+                Peenya Industrial Area, Bengaluru, Karnataka 560058
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918012345678">+91 80123 45678</a>
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:peenya.service@nistyauto.com"
+                  >peenya.service@nistyauto.com</a
+                >
+              </p>
+              <a
+                href="https://goo.gl/maps/example"
+                class="nisty-btn nisty-secondary-btn"
+                target="_blank"
+                >Get Directions</a
+              >
+            </div>
+          </div>
+          <!-- Location Card 3 -->
+          <div class="nisty-location-card">
+            <div class="nisty-location-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.584254590854!2d77.6222!3d12.9344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed8dfa5b3%3A0x2851586042453313!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678886112356!5m2!1sen!2sin"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="nisty-location-details">
+              <h3 class="nisty-location-title">Koramangala Service Center</h3>
+              <p class="nisty-location-address">
+                <i class="fas fa-map-marker-alt"></i> #123, 5th Block, Near
+                Forum Mall, Koramangala, Bengaluru, Karnataka 560095
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918087654321">+91 80876 54321</a>
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:koramangala.service@nistyauto.com"
+                  >koramangala.service@nistyauto.com</a
+                >
+              </p>
+              <a
+                href="https://goo.gl/maps/example"
+                class="nisty-btn nisty-secondary-btn"
+                target="_blank"
+                >Get Directions</a
+              >
+            </div>
+            
+          </div>
+           <!-- Location Card 2 -->
+          <div class="nisty-location-card">
+            <div class="nisty-location-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.584254590854!2d77.6222!3d12.9344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed8dfa5b3%3A0x2851586042453313!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678886112356!5m2!1sen!2sin"
+                width="100%"
+                height="250"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+            <div class="nisty-location-details">
+              <h3 class="nisty-location-title">Koramangala Service Center</h3>
+              <p class="nisty-location-address">
+                <i class="fas fa-map-marker-alt"></i> #123, 5th Block, Near
+                Forum Mall, Koramangala, Bengaluru, Karnataka 560095
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+918087654321">+91 80876 54321</a>
+              </p>
+              <p class="nisty-location-contact">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:koramangala.service@nistyauto.com"
+                  >koramangala.service@nistyauto.com</a
+                >
+              </p>
+              <a
+                href="https://goo.gl/maps/example"
+                class="nisty-btn nisty-secondary-btn"
+                target="_blank"
+                >Get Directions</a
+              >
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Contact Section -->
+    <section id="book" class="nisty-contact-section">
+      <div class="nisty-container">
+        <div class="nisty-section-header">
+          <h2 class="nisty-section-title">Get In Touch</h2>
+          <p class="nisty-section-subtitle">
+            Have questions or need support? Fill out the form below or reach us
+            through our contact details. We're here to help!
+          </p>
+        </div>
+        <div class="nisty-contact-wrapper">
+          <div class="nisty-contact-info">
+            <h3>Contact Information</h3>
+            <p>
+              Our team is available to assist you during business hours. We look
+              forward to hearing from you.
+            </p>
+            <ul>
+              <li>
+                <i class="fas fa-map-marker-alt"></i
+                ><span
+                  ><strong>Head Office:</strong>126/1, Humnabad Ring Road
+                  Opposite KMF Milk Dairy Kalaburagi-585104</span
+                >
+              </li>
+              <li>
+                <i class="fas fa-phone"></i
+                ><span
+                  ><strong>General Enquiries:</strong>
+                  <a href="tel:+919740884999">+91 97408 84999</a></span
+                >
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i
+                ><span
+                  ><strong>Email Support:</strong>
+                  <a
+                    href="mailto: sales@srinistyauto.in
+
+"
+                  >
+                    sales@srinistyauto.in
+                  </a></span
+                >
+              </li>
+              <li>
+                <i class="fas fa-clock"></i
+                ><span
+                  ><strong>Business Hours:</strong> Mon - Sat: 9:00 AM - 6:00
+                  PM</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="nisty-contact-form-wrapper">
+            <form
+              id="nisty-contact-form"
+              class="nisty-contact-form"
+              method="post"
+            >
+              <div class="nisty-form-row">
+                <div class="nisty-form-col">
+                  <input
+                    type="text"
+                    name="name"
+                    class="nisty-form-input"
+                    placeholder="Your Name*"
+                    required
+                  />
+                </div>
+                <div class="nisty-form-col">
+                  <input
+                    type="email"
+                    name="email"
+                    class="nisty-form-input"
+                    placeholder="Your Email*"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="nisty-input-group">
+                <input
+                  type="text"
+                  name="subject"
+                  class="nisty-form-input"
+                  placeholder="Subject*"
+                  required
+                />
+              </div>
+              <div class="nisty-input-group">
+                <textarea
+                  name="message"
+                  class="nisty-form-textarea"
+                  placeholder="Your Message...*"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="nisty-btn nisty-primary-btn">
+                Send Message <i class="fas fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW: Footer -->
+    <footer class="nisty-footer">
+      <div class="nisty-container">
+        <div class="nisty-footer-widgets">
+          <div class="nisty-footer-widget">
+            <div class="nisty-logo">
+              <a href="#home"
+                ><img
+                  src="https://placehold.co/180x55/ffffff/000000?text=NISTY+AUTO"
+                  alt="Footer Logo"
+              /></a>
+            </div>
+            <p>
+              Sri Nisty Automobiles is your trusted partner for Eicher vehicle
+              servicing. We are dedicated to providing quality, reliability, and
+              customer satisfaction.
+            </p>
+          </div>
+          <div class="nisty-footer-widget">
+            <h4 class="nisty-widget-title">Quick Links</h4>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#services">Our Services</a></li>
+              <li><a href="#vehiclemodels">Vehicle Models</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#locations">Find a Location</a></li>
+            </ul>
+          </div>
+          <div class="nisty-footer-widget">
+            <h4 class="nisty-widget-title">Contact Info</h4>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:+918012345678">+91 80123 45678</a>
+            </p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:contact@nistyauto.com">contact@nistyauto.com</a>
+            </p>
+            <p>
+              <strong>24/7 Helpline:</strong>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+            </p>
+          </div>
+        </div>
+        <div class="nisty-footer-bottom">
+          <p class="nisty-copyright">
+            &copy; 2025 Sri Nisty Automobiles. All Rights Reserved.
+          </p>
+          <div class="nisty-social-links">
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="LinkedIn"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
