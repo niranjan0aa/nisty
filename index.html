@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eicher Vehicle Services</title>
-    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -12,7 +11,6 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <!-- Preloader -->
     <div class="nisty-preloader">
       <svg
         class="nisty-car"
@@ -72,7 +70,6 @@
     <div class="nisty-mouse-cursor nisty-cursor-outer"></div>
     <div class="nisty-mouse-cursor nisty-cursor-inner"></div>
 
-    <!-- Header -->
     <header id="nisty-sticky-header" class="nisty-header">
       <div class="nisty-main-top-bar">
         <div class="nisty-container">
@@ -114,7 +111,6 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="nisty-hero-section">
       <div class="nisty-video-background">
         <video
@@ -236,7 +232,6 @@
       </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="nisty-about-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -349,7 +344,6 @@
       </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="nisty-services-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -434,7 +428,6 @@
       </div>
     </section>
 
-    <!-- Vehicle Models Section -->
     <section id="vehiclemodels" class="nisty-vehicle-models-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -590,7 +583,6 @@
       </div>
     </section>
 
-    <!-- News Section -->
     <section id="news" class="nisty-news-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -685,7 +677,6 @@
       </div>
     </section>
 
-    <!-- NEW: Locations Section -->
     <section id="locations" class="nisty-locations-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -696,7 +687,6 @@
           </p>
         </div>
         <div class="nisty-locations-grid">
-          <!-- Location Card 1 -->
           <div class="nisty-location-card">
             <div class="nisty-location-map">
               <iframe
@@ -733,7 +723,6 @@
               >
             </div>
           </div>
-          <!-- Location Card 3 -->
           <div class="nisty-location-card">
             <div class="nisty-location-map">
               <iframe
@@ -771,8 +760,7 @@
             </div>
             
           </div>
-           <!-- Location Card 2 -->
-          <div class="nisty-location-card">
+           <div class="nisty-location-card">
             <div class="nisty-location-map">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.584254590854!2d77.6222!3d12.9344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae144ed8dfa5b3%3A0x2851586042453313!2sKoramangala%2C%20Bengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1678886112356!5m2!1sen!2sin"
@@ -813,7 +801,6 @@
       </div>
     </section>
 
-    <!-- NEW: Contact Section -->
     <section id="book" class="nisty-contact-section">
       <div class="nisty-container">
         <div class="nisty-section-header">
@@ -851,7 +838,6 @@
                   ><strong>Email Support:</strong>
                   <a
                     href="mailto: sales@srinistyauto.in
-
 "
                   >
                     sales@srinistyauto.in
@@ -919,7 +905,6 @@
       </div>
     </section>
 
-    <!-- NEW: Footer -->
     <footer class="nisty-footer">
       <div class="nisty-container">
         <div class="nisty-footer-widgets">
@@ -965,7 +950,7 @@
         </div>
         <div class="nisty-footer-bottom">
           <p class="nisty-copyright">
-            &copy; 2025 Sri Nisty Automobiles. All Rights Reserved.
+            © 2025 Sri Nisty Automobiles. All Rights Reserved.
           </p>
           <div class="nisty-social-links">
             <a href="#" aria-label="Facebook"
@@ -981,6 +966,32 @@
           </div>
         </div>
       </div>
+    <div class="nisty-chatbot-container">
+      <div class="nisty-chat-window" id="nisty-chat-window">
+        <div class="nisty-chat-header">
+          <div class="nisty-chat-header-title">
+            <i class="fas fa-headset"></i>
+            <span>Chat with Support</span>
+          </div>
+          <button class="nisty-close-chat" id="nisty-close-chat-btn">&times;</button>
+        </div>
+        <div class="nisty-chat-body" id="nisty-chat-body">
+          </div>
+        <div class="nisty-quick-replies" id="nisty-quick-replies">
+          </div>
+        <div class="nisty-chat-footer">
+          <input type="text" id="nisty-chat-input" placeholder="Type your message...">
+          <button id="nisty-send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+      <button class="nisty-chatbot-toggle" id="nisty-chatbot-toggle-btn">
+        <div class="nisty-proactive-bubble" id="nisty-proactive-bubble">
+          <p>Hi! Need help?</p>
+        </div>
+        <i class="fas fa-comments"></i>
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
     </footer>
 
     <script src="script.js"></script>

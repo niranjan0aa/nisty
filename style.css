@@ -1130,3 +1130,241 @@ body {
         padding: 25px;
     }
 }
+/* Paste this at the end of your style.css file, replacing the old section 15 */
+
+/*================================================
+    15. Chatbot Styles (UPGRADED)
+================================================*/
+.nisty-chatbot-container {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 1050;
+}
+
+.nisty-chatbot-toggle {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nisty-chatbot-toggle:hover {
+    background-color: var(--primary-hover-color);
+    transform: scale(1.1);
+}
+
+.nisty-chatbot-toggle .fa-times { display: none; }
+.nisty-chatbot-container.open .fa-comments { display: none; }
+.nisty-chatbot-container.open .fa-times { display: block; }
+
+/* --- Proactive Welcome Bubble --- */
+.nisty-proactive-bubble {
+    position: absolute;
+    bottom: 20px;
+    right: 70px;
+    background-color: white;
+    color: var(--text-dark);
+    padding: 10px 15px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    font-size: 15px;
+    font-weight: 500;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    pointer-events: none;
+}
+.nisty-proactive-bubble.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.nisty-proactive-bubble::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -8px;
+    transform: translateY(-50%);
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid white;
+}
+
+
+.nisty-chat-window {
+    width: 350px;
+    max-height: 500px;
+    background: #fff;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    transform: scale(0.95) translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: bottom right;
+}
+
+.nisty-chatbot-container.open .nisty-chat-window {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.nisty-chat-header {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nisty-chat-header-title {
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nisty-close-chat {
+    background: transparent;
+    border: none;
+    color: var(--text-light);
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.nisty-close-chat:hover { opacity: 1; }
+
+.nisty-chat-body {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: var(--bg-light);
+}
+
+.nisty-chat-message {
+    margin-bottom: 15px;
+    max-width: 85%;
+    display: flex;
+    flex-shrink: 0;
+}
+.nisty-chat-message p {
+    margin: 0;
+    padding: 10px 15px;
+    border-radius: 18px;
+    line-height: 1.5;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.nisty-bot-message { justify-content: flex-start; }
+.nisty-bot-message p {
+    background-color: #e9e9eb;
+    color: var(--text-dark);
+    border-bottom-left-radius: 4px;
+}
+
+.nisty-user-message { justify-content: flex-end; margin-left: auto; }
+.nisty-user-message p {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+    border-bottom-right-radius: 4px;
+}
+.nisty-chat-message.typing-indicator p {
+    padding: 10px 15px;
+    background-color: #e9e9eb;
+}
+.nisty-chat-message.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--text-muted);
+    animation: nisty-typing-bounce 1.3s infinite;
+}
+.nisty-chat-message.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.nisty-chat-message.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+
+.nisty-chat-footer {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid var(--border-color);
+    background: #fff;
+}
+#nisty-chat-input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 15px;
+    background: transparent;
+}
+#nisty-send-btn {
+    background: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s;
+}
+#nisty-send-btn:hover { color: var(--primary-hover-color); }
+
+/* --- Quick Replies --- */
+.nisty-quick-replies {
+    padding: 0 10px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: #fff;
+    border-top: 1px solid var(--border-color);
+}
+.nisty-quick-reply-btn {
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.nisty-quick-reply-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--text-light);
+}
+
+@keyframes nisty-typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-5px); }
+}
+
+@media (max-width: 480px) {
+    .nisty-chat-window {
+        width: calc(100vw - 40px);
+        max-height: calc(100vh - 120px);
+        bottom: 75px;
+        right: -15px;
+    }
+}
